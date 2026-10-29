@@ -1,0 +1,18 @@
+{
+  "profile": "standardized_11_features_mean_imputation",
+  "note": "Baseline search grids are taken from archived experiment code, not specified by the manuscript. Missingness handling is aligned to manuscript Section 2.3. These settings require new runs before assigning manuscript scores.",
+  "seed": 42,
+  "inner_splits": 5,
+  "neural_batch_size": 128,
+  "neural_max_epochs": 250,
+  "neural_patience": 20,
+  "neural_weight_decay": 0.00001,
+  "neural_gradient_clip": 1.0,
+  "Ridge": [{"alpha": 0.01}, {"alpha": 0.1}, {"alpha": 1.0}, {"alpha": 10.0}, {"alpha": 100.0}],
+  "RF": [{"max_depth": 6, "min_samples_leaf": 1}, {"max_depth": 6, "min_samples_leaf": 3}, {"max_depth": null, "min_samples_leaf": 1}, {"max_depth": null, "min_samples_leaf": 3}],
+  "XGBoost": [{"max_depth": 3, "reg_lambda": 1.0}, {"max_depth": 6, "reg_lambda": 1.0}, {"max_depth": 6, "reg_lambda": 5.0}],
+  "CatBoost": [{"depth": 4}, {"depth": 6}, {"depth": 8}],
+  "FT-Transformer": [{"blocks": 1, "lr": 0.001}, {"blocks": 2, "lr": 0.001}],
+  "TabR": [{"width": 128, "encoder_blocks": 0, "context": 32, "lr": 0.001}, {"width": 256, "encoder_blocks": 1, "context": 64, "lr": 0.0003}],
+  "TabPFN": {"n_estimators": 8, "random_state": 42, "fine_tuned": false}
+}
